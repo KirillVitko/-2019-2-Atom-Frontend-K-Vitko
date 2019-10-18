@@ -83,6 +83,7 @@ class MessageValue extends HTMLElement {
             const messageContainer = localStorage.getItem('message-container')
             this.messages = JSON.parse(messageContainer)
             for (let i = 0; i < this.messages.length; i += 1) {
+                const newmessage = document.createElement('div')
                 const newtext = document.createElement('div')
                 const newdate = document.createElement('div')
                 const newname = document.createElement('div')
@@ -92,9 +93,10 @@ class MessageValue extends HTMLElement {
                 newtext.innerHTML = this.messages[i].inner
                 newdate.innerHTML = this.messages[i].date
                 newname.innerHTML = this.messages[i].name
-                newtext.appendChild(newdate)
-                newtext.appendChild(newname)
-                this.$container.prepend(newtext)
+                newmessage.appendChild(newtext)
+                newmessage.appendChild(newdate)
+                newmessage.appendChild(newname)
+                this.$container.prepend(newmessage)
             }
        }
     }
