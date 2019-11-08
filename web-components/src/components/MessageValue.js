@@ -55,8 +55,7 @@ class MessageValue extends HTMLElement {
     connectedCallback() {
         const newtext = document.createElement('div')
         const newtime = document.createElement('div')
-        const newname = document.createElement('div')
-        [newtext.innerHTML, newtime.innerHTML, newname.innerHTML] = this.message
+        const newname = document.createElement('div');[newtext.innerHTML, newtime.innerHTML, newname.innerHTML] = this.message
         this.$text.prepend(newtext)
         this.$time.prepend(newtime)
         this.$name.prepend(newname)
