@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 template.innerHTML = `
     <style>
         form-input {
@@ -46,21 +46,22 @@ template.innerHTML = `
         <message-catalog class="message"></message-catalog>
         <form-input name="message-text" placeholder="Введите сообщеине"></form-input>
     </form>
-`;
+`
 
 class MessageForm extends HTMLElement {
     constructor () {
-        super();
-        this._shadowRoot = this.attachShadow({ mode: 'open' });
-        this._shadowRoot.appendChild(template.content.cloneNode(true));
-        this.$form = this._shadowRoot.querySelector('form');
-        this.$input = this._shadowRoot.querySelector('form-input');
-        this.$message = this._shadowRoot.querySelector('message-catalog');
+        super()
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClickClack", "_onChatList"] }] */
+        this._shadowRoot = this.attachShadow({ mode: 'open' })
+        this._shadowRoot.appendChild(template.content.cloneNode(true))
+        this.$form = this._shadowRoot.querySelector('form')
+        this.$input = this._shadowRoot.querySelector('form-input')
+        this.$message = this._shadowRoot.querySelector('message-catalog')
 
         this.$message.scrollTop = this.$message.scrollHeight
 
-        this.$form.addEventListener('submit', this._onSubmit.bind(this));
-        this.$form.addEventListener('keypress', this._onKeyPress.bind(this));
+        this.$form.addEventListener('submit', this._onSubmit.bind(this))
+        this.$form.addEventListener('keypress', this._onKeyPress.bind(this))
     }
 
     _onSubmit (event) {
@@ -70,9 +71,9 @@ class MessageForm extends HTMLElement {
 
     _onKeyPress (event) {
         if (event.keyCode == 13) {
-            this.$form.dispatchEvent(new Event('submit'));
+            this.$form.dispatchEvent(new Event('submit'))
         }
     }
 }
 
-customElements.define('message-form', MessageForm);
+customElements.define('message-form', MessageForm)
