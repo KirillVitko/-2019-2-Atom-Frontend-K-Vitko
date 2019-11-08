@@ -38,6 +38,7 @@ class MessageValue extends HTMLElement {
     constructor (){
         super()
         /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
+        /* eslint camelcase: 0 */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$text = this.shadowRoot.querySelector('.text')
@@ -54,9 +55,7 @@ class MessageValue extends HTMLElement {
         const newtext = document.createElement('div')
         const newtime = document.createElement('div')
         const newname = document.createElement('div')
-        newtext.innerHTML = this.message[0]
-        newtime.innerHTML = this.message[1]
-        newname.innerHTML = this.message[2]
+        [newtext.innerHTML, newtime.innerHTML, newname.innerHTML] = this.message
         this.$text.prepend(newtext)
         this.$time.prepend(newtime)
         this.$name.prepend(newname)
