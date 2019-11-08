@@ -51,7 +51,7 @@ template.innerHTML = `
 class MessageForm extends HTMLElement {
     constructor () {
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClickClack", "_onChatList"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onSubmit", "_onKeyPress"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$form = this._shadowRoot.querySelector('form')
