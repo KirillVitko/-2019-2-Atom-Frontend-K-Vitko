@@ -21,7 +21,7 @@ template.innerHTML = `
 class MessageCatalog extends HTMLElement {
     constructor (){
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClickClack", "_onChatList"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$container = this.shadowRoot.querySelector('.message')
