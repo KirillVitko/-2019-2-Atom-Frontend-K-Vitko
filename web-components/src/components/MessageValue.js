@@ -40,6 +40,7 @@ class MessageValue extends HTMLElement {
         /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
         /* eslint camelcase: 0 */
         /* eslint no-multi-assign: 0 */
+        /* eslint prefer-destructuring: 0 */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$text = this.shadowRoot.querySelector('.text')
