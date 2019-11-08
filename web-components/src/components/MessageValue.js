@@ -56,10 +56,9 @@ class MessageValue extends HTMLElement {
         const newtext = document.createElement('div')
         const newtime = document.createElement('div')
         const newname = document.createElement('div')
-        let [a, b, c] = this.message
-        newtext.innerHTML = a
-        newtime.innerHTML = b
-        newname.innerHTML = c
+        newtext.innerHTML = this.message[0]
+        newtime.innerHTML = this.message[1]
+        newname.innerHTML = this.message[2]
         this.$text.prepend(newtext)
         this.$time.prepend(newtime)
         this.$name.prepend(newname)
