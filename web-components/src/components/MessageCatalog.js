@@ -15,12 +15,13 @@ template.innerHTML = `
 
     </style>
         <div class="message"></div>
-`;
+`
 
 
 class MessageCatalog extends HTMLElement {
     constructor (){
         super()
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClickClack", "_onChatList"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$container = this.shadowRoot.querySelector('.message')
@@ -60,4 +61,4 @@ class MessageCatalog extends HTMLElement {
 
 }
 
-customElements.define('message-catalog', MessageCatalog);
+customElements.define('message-catalog', MessageCatalog)
