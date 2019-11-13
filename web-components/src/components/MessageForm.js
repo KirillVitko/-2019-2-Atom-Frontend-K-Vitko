@@ -66,7 +66,9 @@ class MessageForm extends HTMLElement {
 
     _onSubmit (event) {
       event.preventDefault()
-      this.$message.setAttribute('text-message', this.$input.value)
+      if (this.$input.value != '') {
+            this.$message.setAttribute('text-message', this.$input.value);
+      }
     }
 
     _onKeyPress (event) {
