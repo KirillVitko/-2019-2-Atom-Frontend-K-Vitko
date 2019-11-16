@@ -43,6 +43,14 @@ class MessageCatalog extends HTMLElement {
           this.message_list.push(message)
           const json = JSON.stringify(this.message_list)
           localStorage.setItem('message-container', json)
+      
+          const newmessage = document.createElement('message-value')
+          newmessage.setAttribute('text', message.text)
+          newmessage.setAttribute('time', message.time)
+          newmessage.setAttribute('name', message.name)
+          this.$container.scrollBottom = this.$container.scrollHeight
+          this.$container.prepend(newmessage)
+          newmessage.scrollIntoView()
     }
 
     connectedCallback() {
