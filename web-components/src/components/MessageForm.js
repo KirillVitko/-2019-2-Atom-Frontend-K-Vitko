@@ -67,14 +67,12 @@ class MessageForm extends HTMLElement {
     _onSubmit (event) {
       event.preventDefault()
       this.$message.setAttribute('text-message', this.$input.value)
+      this.$input.setAttribute('value','')
     }
 
     _onKeyPress (event) {
         if (event.keyCode == 13 && this.$input.value != '') {
             this.$form.dispatchEvent(new Event('submit'))
-            console.log('dwadwa')
-            this.$input.setAttribute('value','')
-            console.log('dwadwa')
         }
     }
 }
