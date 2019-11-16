@@ -29,10 +29,8 @@ class FormInput extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        alert('dwadaw')
         if (name == "value") {
           this.$input.value = ''
-          alert('dwadaw')
         }
         this.$input.setAttribute(name, newValue)
     }
