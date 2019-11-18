@@ -63,9 +63,9 @@ template.innerHTML = `
 
     <div class="title">
       <button></button>
-      <img class="avatar" src="../image/avatar.jpeg"/>
-      <img class="loupe" src="../image/loupe.svg"/>
-      <img class="settings" src="../image/settings.svg"/>
+      <img class="avatar" src="image/avatar.jpeg"/>
+      <img class="loupe" src="image/loupe.svg"/>
+      <img class="settings" src="image/settings.svg"/>
       <div class="title_text">
         <p style="font-size:30px";>Spider-man</p>
         Online
