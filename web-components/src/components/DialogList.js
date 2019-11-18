@@ -51,7 +51,7 @@ template.innerHTML = `
     </style>
 
     <div class="dialog">
-        <img class="avatar" src="../image/avatar.jpeg"/>
+        <img class="avatar" src="image/avatar.jpeg"/>
         <div class="message"></div>
         <div class="time"></div>
         <div class="username">Spider-Man</div>
