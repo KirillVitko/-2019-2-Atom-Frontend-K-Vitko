@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 template.innerHTML = `
     <style>
         form-input {
@@ -51,12 +51,12 @@ template.innerHTML = `
         <message-catalog class="message"></message-catalog>
         <form-input name="message-text" placeholder="Введите сообщеине"></form-input>
     </form>
-`;
+`
 
 class MessageForm extends HTMLElement {
     constructor () {
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onSubmit", "_onKeyPress"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onSubmit", "_onKeyPress", "_hideMessage", "_hideDialog"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$form = this._shadowRoot.querySelector('form')
@@ -78,8 +78,8 @@ class MessageForm extends HTMLElement {
     }
 
     _onKeyPress (event) {
-        if (event.keyCode == 13 && this.$input.value != '') {
-            this.$form.dispatchEvent(new Event('submit'));
+        if (event.keyCode === 13 && this.$input.value !== '') {
+            this.$form.dispatchEvent(new Event('submit'))
         }
     }
 
@@ -95,4 +95,4 @@ class MessageForm extends HTMLElement {
 
 }
 
-customElements.define('message-form', MessageForm);
+customElements.define('message-form', MessageForm)
