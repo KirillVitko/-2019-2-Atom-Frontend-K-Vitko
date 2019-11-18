@@ -76,7 +76,7 @@ template.innerHTML = `
 class TitleMessage extends HTMLElement {
     constructor () {
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClick"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$button = this._shadowRoot.querySelector('button')
