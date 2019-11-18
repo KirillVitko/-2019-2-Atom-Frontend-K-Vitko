@@ -11,7 +11,7 @@ template.innerHTML = `
           transition-property: top;
           transition-property: height;
           transition-property: width;
-          background: url('image/arrow.svg');
+          padding: 0;
         }
 
         button:hover {
@@ -32,6 +32,10 @@ template.innerHTML = `
         .title_text {
             text-align: center;
             color: white;
+        }
+
+        .arrow {
+          background: #CD00CD;
         }
 
         .avatar {
@@ -62,7 +66,7 @@ template.innerHTML = `
     </style>
 
     <div class="title">
-      <button></button>
+      <button><img class="arrow" src="image/arrow.svg" /></button>
       <img class="avatar" src="image/avatar.jpeg"/>
       <img class="loupe" src="image/loupe.svg"/>
       <img class="settings" src="image/settings.svg"/>
