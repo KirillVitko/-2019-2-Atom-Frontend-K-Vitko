@@ -11,7 +11,7 @@ template.innerHTML = `
           transition-property: top;
           transition-property: height;
           transition-property: width;
-          background: url('../image/arrow.svg');
+          background: url('image/arrow.svg');
         }
 
         button:hover {
