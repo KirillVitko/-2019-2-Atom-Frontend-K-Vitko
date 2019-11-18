@@ -59,7 +59,7 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin([
-            { from: 'image', to: 'image' }
+            { context: path.resolve(__dirname, 'app') from: 'image', to: 'image' }
         ]),
         new MiniCSSExtractPlugin({
             filename: 'style.css',
