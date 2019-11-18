@@ -6,7 +6,7 @@ template.innerHTML = `
             outline: none;
             width: calc(100% - 2px);
         }
-        
+
         :host {
             display: inline-block;
             border: 1px solid rgba(25, 25, 25, 0.32);
@@ -18,7 +18,7 @@ template.innerHTML = `
 class FormInput extends HTMLElement {
     constructor () {
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClickClack", "_onChatList"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$input = this.shadowRoot.querySelector('input')

@@ -51,7 +51,7 @@ template.innerHTML = `
     </style>
 
     <div class="dialog">
-        <img class="avatar" src="../image/avatar.jpeg"/>
+        <img class="avatar" src="image/avatar.jpeg"/>
         <div class="message"></div>
         <div class="time"></div>
         <div class="username">Spider-Man</div>
@@ -67,15 +67,27 @@ class DialogList extends HTMLElement {
         this.$dialog = this._shadowRoot.querySelector('.dialog');
         this.$message = this._shadowRoot.querySelector('.message');
         this.$time = this._shadowRoot.querySelector('.time');
-        const lastmessagetext = document.createElement('div');
-        const lastmessagetime = document.createElement('div');
-        const container = JSON.parse(localStorage.getItem('message-container'));
-        lastmessagetext.innerHTML = container[container.length-1]['text'];
-        this.$message.prepend(lastmessagetext);
-        lastmessagetime.innerHTML = container[container.length-1]['time'];
-        this.$time.prepend(lastmessagetime);
-
         this.$dialog.addEventListener('click', this._onClick.bind(this));
+    }
+
+    static get observedAttributes() {
+        return ['new']
+    }
+
+    connectedCallback() {
+      const lastmessagetext = document.createElement('div');
+      const lastmessagetime = document.createElement('div');
+      const container = JSON.parse(localStorage.getItem('message-container'));
+      lastmessagetext.innerHTML = container[container.length-1]['text'];
+      this.$message.prepend(lastmessagetext);
+      lastmessagetime.innerHTML = container[container.length-1]['time'];
+      this.$time.prepend(lastmessagetime);
+    }
+
+    attributeChangedCallback() {
+        const container = JSON.parse(localStorage.getItem('message-container'));
+        this.$message.innerHTML = container[container.length-1]['text'];
+        this.$time.innerHTML = container[container.length-1]['time'];
     }
 
     _onClick (event) {

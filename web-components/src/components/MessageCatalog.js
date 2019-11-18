@@ -15,7 +15,7 @@ template.innerHTML = `
 
     </style>
         <div class="message"></div>
-`
+`;
 
 
 class MessageCatalog extends HTMLElement {
@@ -34,23 +34,23 @@ class MessageCatalog extends HTMLElement {
     }
 
     attributeChangedCallback(name, old_value, new_value) {
-          const message = {}
-          const time = new Date()
-          const user_name = "kirill"
-          message.text = new_value
-          message.time = `${time.getHours()}:${('0'+time.getMinutes()).slice(-2)}`
-          message.name = user_name
-          this.message_list.push(message)
-          const json = JSON.stringify(this.message_list)
-          localStorage.setItem('message-container', json)
+        const message = {}
+        const time = new Date()
+        const user_name = "kirill"
+        message.text = new_value
+        message.time = `${time.getHours()}:${('0'+time.getMinutes()).slice(-2)}`
+        message.name = user_name
+        this.message_list.push(message)
+        const json = JSON.stringify(this.message_list)
+        localStorage.setItem('message-container', json)
 
-          const newmessage = document.createElement('message-value')
-          newmessage.setAttribute('text', message.text)
-          newmessage.setAttribute('time', message.time)
-          newmessage.setAttribute('name', message.name)
-          this.$container.scrollBottom = this.$container.scrollHeight
-          this.$container.prepend(newmessage)
-          newmessage.scrollIntoView()
+        const newmessage = document.createElement('message-value')
+        newmessage.setAttribute('text', message.text)
+        newmessage.setAttribute('time', message.time)
+        newmessage.setAttribute('name', message.name)
+        this.$container.scrollBottom = this.$container.scrollHeight
+        this.$container.prepend(newmessage)
+        newmessage.scrollIntoView()
     }
 
     connectedCallback() {
@@ -70,4 +70,4 @@ class MessageCatalog extends HTMLElement {
 
 }
 
-customElements.define('message-catalog', MessageCatalog)
+customElements.define('message-catalog', MessageCatalog);
