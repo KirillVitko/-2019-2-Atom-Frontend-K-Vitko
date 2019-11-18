@@ -57,7 +57,7 @@ template.innerHTML = `
       <div class="name"></div>
     </div>
 
-`
+`;
 
 class MessageValue extends HTMLElement {
     constructor (){
@@ -96,4 +96,4 @@ class MessageValue extends HTMLElement {
     }
 }
 
-customElements.define('message-value', MessageValue)
+customElements.define('message-value', MessageValue);

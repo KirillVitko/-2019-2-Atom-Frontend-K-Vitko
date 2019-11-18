@@ -1,6 +1,7 @@
 const template = document.createElement('template')
 template.innerHTML = `
     <style>
+
         .message {
             max-width: 15%;
             position: absolute;
@@ -11,6 +12,7 @@ template.innerHTML = `
             flex-direction: column-reverse;
             flex-wrap: nowrap;
         }
+
     </style>
         <div class="message"></div>
 `
@@ -36,7 +38,7 @@ class MessageCatalog extends HTMLElement {
           const time = new Date()
           const user_name = "kirill"
           message.text = new_value
-          message.time = `${time.getHours()}:${time.getMinutes()}`
+          message.time = `${time.getHours()}:${('0'+time.getMinutes()).slice(-2)}`
           message.name = user_name
           this.message_list.push(message)
           const json = JSON.stringify(this.message_list)
