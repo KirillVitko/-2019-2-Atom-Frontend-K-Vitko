@@ -35,8 +35,8 @@ template.innerHTML = `
     </style>
 
     <div class="title">
-      <img class="loupe" src="../image/loupe.svg"/>
-      <img class="settings" src="../image/settings.svg"/>
+      <img class="loupe" src="image/loupe.svg"/>
+      <img class="settings" src="image/settings.svg"/>
       <div class="title_text">
         <p style="font-size:30px";>Messenger</p>
       </div>
