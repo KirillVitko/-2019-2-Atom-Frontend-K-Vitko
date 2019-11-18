@@ -1,7 +1,6 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 template.innerHTML = `
     <style>
-
         .dialog {
           transition-property: background;
           transition-duration: 1s;
@@ -13,7 +12,6 @@ template.innerHTML = `
           width: 90%;
           height: 15%;
         }
-
         .avatar {
           position: relative;
           left: 1%;
@@ -22,7 +20,6 @@ template.innerHTML = `
           height: 120px;
           width: 120px;
         }
-
         .username {
           position: relative;
           left: 15%;
@@ -30,44 +27,39 @@ template.innerHTML = `
           font-size: 30px;
           color: #DC143C;
         }
-
         .message {
           position: relative;
           left: 15%;
           bottom: 30%;
           font-size: 20px;
         }
-
         .time {
           position: relative;
           left: 95%;
           bottom: 20%;
         }
-
         .dialog:hover {
           background: #CCFFFF;
         }
-
     </style>
-
     <div class="dialog">
         <img class="avatar" src="image/avatar.jpeg"/>
         <div class="message"></div>
         <div class="time"></div>
         <div class="username">Spider-Man</div>
     </div>
-`;
+`
 
 class DialogList extends HTMLElement {
     constructor () {
-        super();
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
-        this._shadowRoot = this.attachShadow({ mode: 'open' });
-        this._shadowRoot.appendChild(template.content.cloneNode(true));
-        this.$dialog = this._shadowRoot.querySelector('.dialog');
-        this.$message = this._shadowRoot.querySelector('.message');
-        this.$time = this._shadowRoot.querySelector('.time');
-        this.$dialog.addEventListener('click', this._onClick.bind(this));
+        super()
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClick"] }] */
+        this._shadowRoot = this.attachShadow({ mode: 'open' })
+        this._shadowRoot.appendChild(template.content.cloneNode(true))
+        this.$dialog = this._shadowRoot.querySelector('.dialog')
+        this.$message = this._shadowRoot.querySelector('.message')
+        this.$time = this._shadowRoot.querySelector('.time')
+        this.$dialog.addEventListener('click', this._onClick.bind(this))
     }
 
     static get observedAttributes() {
@@ -75,24 +67,24 @@ class DialogList extends HTMLElement {
     }
 
     connectedCallback() {
-      const lastmessagetext = document.createElement('div');
-      const lastmessagetime = document.createElement('div');
-      const container = JSON.parse(localStorage.getItem('message-container'));
-      lastmessagetext.innerHTML = container[container.length-1]['text'];
-      this.$message.prepend(lastmessagetext);
-      lastmessagetime.innerHTML = container[container.length-1]['time'];
-      this.$time.prepend(lastmessagetime);
+        const lastmessagetext = document.createElement('div')
+        const lastmessagetime = document.createElement('div')
+        const container = JSON.parse(localStorage.getItem('message-container'))
+        lastmessagetext.innerHTML = container[container.length-1].text
+        this.$message.prepend(lastmessagetext)
+        lastmessagetime.innerHTML = container[container.length-1].time
+        this.$time.prepend(lastmessagetime)
     }
 
     attributeChangedCallback() {
-        const container = JSON.parse(localStorage.getItem('message-container'));
-        this.$message.innerHTML = container[container.length-1]['text'];
-        this.$time.innerHTML = container[container.length-1]['time'];
+        const container = JSON.parse(localStorage.getItem('message-container'))
+        this.$message.innerHTML = container[container.length-1].text
+        this.$time.innerHTML = container[container.length-1].time
     }
 
     _onClick (event) {
-        this.$dialog.dispatchEvent(new Event('hide', {composed:true}));
+        this.$dialog.dispatchEvent(new Event('hide', {composed:true}))
     }
 }
 
-customElements.define('dialog-list', DialogList);
+customElements.define('dialog-list', DialogList)

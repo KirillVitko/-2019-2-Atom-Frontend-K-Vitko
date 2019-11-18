@@ -1,21 +1,18 @@
 const template = document.createElement('template')
 template.innerHTML = `
     <style>
-
         .time {
             font-size: 10px;
             font-style: oblique;
             text-align: right;
             margin: 2px;
         }
-
         .name {
             font-size: 12px;
             font-style: oblique;
             text-align: right;
             margin: 2px;
         }
-
         .message {
             animation: fadeIn 1s;
             max-width: 100%;
@@ -27,7 +24,6 @@ template.innerHTML = `
             transition-property: background;
             transition-duration: .5s;
         }
-
         @keyframes fadeIn {
           0% {
               transform: scale(0);
@@ -45,19 +41,16 @@ template.innerHTML = `
               opacity: 1;
           }
       }
-
         .message:active {
           background: #00BFFF;
         }
     </style>
-
     <div class="message">
       <div class="text"></div>
       <div class="time"></div>
       <div class="name"></div>
     </div>
-
-`;
+`
 
 class MessageValue extends HTMLElement {
     constructor (){
@@ -96,4 +89,4 @@ class MessageValue extends HTMLElement {
     }
 }
 
-customElements.define('message-value', MessageValue);
+customElements.define('message-value', MessageValue)

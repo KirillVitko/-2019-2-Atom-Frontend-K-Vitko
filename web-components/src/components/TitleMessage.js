@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 template.innerHTML = `
     <style>
         button {
@@ -13,31 +13,26 @@ template.innerHTML = `
           transition-property: width;
           padding: 0;
         }
-
         button:hover {
           top: 26%;
           height: 60px;
           width: 60px;
         }
-
         .title {
-          position: absolute;
-          overflow: auto;
-          top: 0;
-          background: #CD00CD;
-          width:100%;
-          height: 11%;
+            position: absolute;
+            overflow: auto;
+            top: 0;
+            background: #CD00CD;
+            width:100%;
+            height: 11%;
         }
-
         .title_text {
-          text-align: center;
-          color: white;
+            text-align: center;
+            color: white;
         }
-
         .arrow {
           background: #CD00CD;
         }
-
         .avatar {
           position: absolute;
           left: 43%;
@@ -46,7 +41,6 @@ template.innerHTML = `
           height: 50px;
           width: 50px;
         }
-
         .loupe {
           position: absolute;
           right: 6%;
@@ -54,7 +48,6 @@ template.innerHTML = `
           height: 30px;
           width: 30px;
         }
-
         .settings {
           position: absolute;
           right: 3%;
@@ -62,9 +55,7 @@ template.innerHTML = `
           height: 30px;
           width: 30px;
         }
-
     </style>
-
     <div class="title">
       <button><img class="arrow" src="image/arrow.svg" /></button>
       <img class="avatar" src="image/avatar.jpeg"/>

@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 template.innerHTML = `
     <style>
         form-input {
@@ -7,7 +7,6 @@ template.innerHTML = `
             overflow: auto;
             bottom: 0;
         }
-
         .message {
           position: absolute;
           overflow: auto;
@@ -16,7 +15,6 @@ template.innerHTML = `
           top: 12%;
           bottom: 3%;
         }
-
         .pen {
           position: absolute;
           right: 5%;
@@ -29,18 +27,14 @@ template.innerHTML = `
           border-radius: 10%;
           background: #FFA500;
         }
-
         .pen:hover {
           height: 60px;
           width: 60px;
         }
-
         input[type=submit] {
             visibility: collapse;
         }
-
     </style>
-
     <div class="dialog_page" style="display: none">
         <title-dialogs></title-dialogs>
         <dialog-list></dialog-list>
@@ -51,12 +45,12 @@ template.innerHTML = `
         <message-catalog class="message"></message-catalog>
         <form-input name="message-text" placeholder="Введите сообщеине"></form-input>
     </form>
-`;
+`
 
 class MessageForm extends HTMLElement {
     constructor () {
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onSubmit", "_onKeyPress"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onSubmit", "_onKeyPress", "_hideMessage", "_hideDialog"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$form = this._shadowRoot.querySelector('form')
@@ -79,8 +73,8 @@ class MessageForm extends HTMLElement {
     }
 
     _onKeyPress (event) {
-        if (event.keyCode == 13 && this.$input.value != '') {
-            this.$form.dispatchEvent(new Event('submit'));
+        if (event.keyCode === 13 && this.$input.value !== '') {
+            this.$form.dispatchEvent(new Event('submit'))
         }
     }
 
@@ -96,4 +90,4 @@ class MessageForm extends HTMLElement {
 
 }
 
-customElements.define('message-form', MessageForm);
+customElements.define('message-form', MessageForm)
