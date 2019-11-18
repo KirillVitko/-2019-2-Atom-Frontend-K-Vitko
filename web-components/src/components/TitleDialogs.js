@@ -76,14 +76,14 @@ template.innerHTML = `
 class TitleMessage extends HTMLElement {
     constructor () {
         super()
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClick"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$button = this._shadowRoot.querySelector('button')
-        this.$button.addEventListener('click', this.onClick.bind(this))
+        this.$button.addEventListener('click', this._onClick.bind(this))
     }
 
-    onClick (event) {
+    _onClick (event) {
         this.$button.dispatchEvent(new Event('hide', {composed:true}))
     }
 }
