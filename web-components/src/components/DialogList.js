@@ -67,6 +67,10 @@ class DialogList extends HTMLElement {
         this.$dialog = this._shadowRoot.querySelector('.dialog')
         this.$message = this._shadowRoot.querySelector('.message')
         this.$time = this._shadowRoot.querySelector('.time')
+        this.$dialog.addEventListener('click', this._onClick.bind(this))
+    }
+  
+    connectedCallback() {
         const lastmessagetext = document.createElement('div')
         const lastmessagetime = document.createElement('div')
         const container = JSON.parse(localStorage.getItem('message-container'))
@@ -74,8 +78,12 @@ class DialogList extends HTMLElement {
         this.$message.prepend(lastmessagetext)
         lastmessagetime.innerHTML = container[container.length-1].time
         this.$time.prepend(lastmessagetime)
-
-        this.$dialog.addEventListener('click', this._onClick.bind(this))
+    }
+  
+    attributeChangedCallback() {
+        const container = JSON.parse(localStorage.getItem('message-container'))
+        this.$message.innerHTML = container[container.length-1].text
+        this.$time.innerHTML = container[container.length-1].time
     }
 
     _onClick (event) {
