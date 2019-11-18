@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "eslint src/components/FormInput.js && eslint  src/components/MessageForm.js && eslint src/components/MessageCatalog.js && eslint src/components/MessageValue.js",
+    "test": "eslint src/components/FormInput.js && eslint  src/components/MessageForm.js && eslint src/components/MessageCatalog.js && eslint src/components/MessageValue.js && eslint src/components/DialogList.js && eslint src/components/TitleDialogs.js && eslint src/components/TitleDialogs.js",
     "start": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=development"
   },
