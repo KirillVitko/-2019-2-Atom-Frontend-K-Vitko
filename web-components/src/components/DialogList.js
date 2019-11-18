@@ -60,7 +60,7 @@ template.innerHTML = `
 
 class DialogList extends HTMLElement {
     constructor () {
-        super();
+        super()
         /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClick"] }] */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
