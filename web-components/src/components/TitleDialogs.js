@@ -65,7 +65,7 @@ template.innerHTML = `
     </div>
 `
 
-class TitleMessage extends HTMLElement {
+class TitleDialogs extends HTMLElement {
     constructor () {
         super()
         /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClick"] }] */
