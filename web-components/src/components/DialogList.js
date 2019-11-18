@@ -70,6 +70,10 @@ class DialogList extends HTMLElement {
         this.$dialog.addEventListener('click', this._onClick.bind(this))
     }
   
+    static get observedAttributes() {
+        return ['new']
+    }
+  
     connectedCallback() {
         const lastmessagetext = document.createElement('div')
         const lastmessagetime = document.createElement('div')
