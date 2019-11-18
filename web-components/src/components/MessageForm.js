@@ -38,7 +38,7 @@ template.innerHTML = `
     <div class="dialog_page" style="display: none">
         <title-dialogs></title-dialogs>
         <dialog-list></dialog-list>
-        <img class="pen" src="../image/pen.svg" title="Создать диалог"/>
+        <img class="pen" src="image/pen.svg" title="Создать диалог"/>
     </div>
     <form>
         <title-message></title-message>
