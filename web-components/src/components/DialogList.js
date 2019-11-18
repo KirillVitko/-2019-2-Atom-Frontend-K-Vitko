@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement('template')
 template.innerHTML = `
     <style>
 
@@ -56,31 +56,31 @@ template.innerHTML = `
         <div class="time"></div>
         <div class="username">Spider-Man</div>
     </div>
-`;
+`
 
 class DialogList extends HTMLElement {
     constructor () {
         super();
-        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
-        this._shadowRoot = this.attachShadow({ mode: 'open' });
-        this._shadowRoot.appendChild(template.content.cloneNode(true));
-        this.$dialog = this._shadowRoot.querySelector('.dialog');
-        this.$message = this._shadowRoot.querySelector('.message');
-        this.$time = this._shadowRoot.querySelector('.time');
-        const lastmessagetext = document.createElement('div');
-        const lastmessagetime = document.createElement('div');
-        const container = JSON.parse(localStorage.getItem('message-container'));
-        lastmessagetext.innerHTML = container[container.length-1]['text'];
-        this.$message.prepend(lastmessagetext);
-        lastmessagetime.innerHTML = container[container.length-1]['time'];
-        this.$time.prepend(lastmessagetime);
+        /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot", "_onClick"] }] */
+        this._shadowRoot = this.attachShadow({ mode: 'open' })
+        this._shadowRoot.appendChild(template.content.cloneNode(true))
+        this.$dialog = this._shadowRoot.querySelector('.dialog')
+        this.$message = this._shadowRoot.querySelector('.message')
+        this.$time = this._shadowRoot.querySelector('.time')
+        const lastmessagetext = document.createElement('div')
+        const lastmessagetime = document.createElement('div')
+        const container = JSON.parse(localStorage.getItem('message-container'))
+        lastmessagetext.innerHTML = container[container.length-1].text
+        this.$message.prepend(lastmessagetext)
+        lastmessagetime.innerHTML = container[container.length-1].time
+        this.$time.prepend(lastmessagetime)
 
-        this.$dialog.addEventListener('click', this._onClick.bind(this));
+        this.$dialog.addEventListener('click', this._onClick.bind(this))
     }
 
     _onClick (event) {
-        this.$dialog.dispatchEvent(new Event('hide', {composed:true}));
+        this.$dialog.dispatchEvent(new Event('hide', {composed:true}))
     }
 }
 
-customElements.define('dialog-list', DialogList);
+customElements.define('dialog-list', DialogList)
