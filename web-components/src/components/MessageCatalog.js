@@ -1,7 +1,6 @@
 const template = document.createElement('template')
 template.innerHTML = `
     <style>
-
         .message {
             max-width: 15%;
             position: absolute;
@@ -12,7 +11,6 @@ template.innerHTML = `
             flex-direction: column-reverse;
             flex-wrap: nowrap;
         }
-
     </style>
         <div class="message"></div>
 `
@@ -23,6 +21,7 @@ class MessageCatalog extends HTMLElement {
         super()
         /* eslint no-underscore-dangle: ["error", { "allow": ["_shadowRoot"] }] */
         /* eslint camelcase: 0 */
+        /* eslint prefer-template: 0 */
         this._shadowRoot = this.attachShadow({ mode: 'open' })
         this._shadowRoot.appendChild(template.content.cloneNode(true))
         this.$container = this.shadowRoot.querySelector('.message')
@@ -38,12 +37,12 @@ class MessageCatalog extends HTMLElement {
           const time = new Date()
           const user_name = "kirill"
           message.text = new_value
-          message.time = `${time.getHours()}:${time.getMinutes()}`
+          message.time = `${time.getHours()}:${('0'+time.getMinutes()).slice(-2)}`
           message.name = user_name
           this.message_list.push(message)
           const json = JSON.stringify(this.message_list)
           localStorage.setItem('message-container', json)
-      
+
           const newmessage = document.createElement('message-value')
           newmessage.setAttribute('text', message.text)
           newmessage.setAttribute('time', message.time)

@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "eslint src/components/FormInput.js && eslint  src/components/MessageForm.js && eslint src/components/MessageCatalog.js && eslint src/components/MessageValue.js",
+    "test": "eslint src/components/FormInput.js && eslint  src/components/MessageForm.js && eslint src/components/MessageCatalog.js && eslint src/components/MessageValue.js && eslint src/components/DialogList.js && eslint src/components/TitleDialogs.js && eslint src/components/TitleDialogs.js",
     "start": "webpack-dev-server --mode=development --hot",
     "build": "webpack --mode=development"
   },
@@ -12,7 +12,11 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^2.9.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.4.0",
@@ -31,7 +35,5 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
   },
-  "dependencies": {
-    "eslint-config-airbnb": "^18.0.1"
-  }
+  "dependencies": {}
 }
