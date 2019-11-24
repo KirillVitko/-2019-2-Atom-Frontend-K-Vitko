@@ -12,8 +12,8 @@ template.innerHTML = `
           overflow: auto;
           left: 0;
           right: 3px;
-          top: 12%;
-          bottom: 3%;
+          top: 110px;
+          bottom: 28px;
         }
         .pen {
           position: absolute;

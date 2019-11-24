@@ -8,7 +8,7 @@ template.innerHTML = `
             top: 0;
             background: #CD00CD;
             width:100%;
-            height: 11%;
+            height: 105px;
         }
 
         .title_text {
