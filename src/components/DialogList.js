@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from '@emotion/styled'
-import avatar from '../assets/avatar.jpeg'
+import styled from '@emotion/styled';
+import avatar from '../assets/avatar.jpeg';
+import PropTypes from 'prop-types';
 
 const Result = styled.div`
   transition-property: background;
@@ -43,23 +44,23 @@ const Result = styled.div`
   left: 95%;
   bottom: 20%;
 }
-`
+`;
 
 function DialogList(props){
-    return(
-      <Result onClick={() => props.hideDialogs()}>
-        <img src={avatar} class="avatar" alt="avatat"/>
-        <div class="message">
-          {props.lastMessageText}
-        </div>
-        <div class="time">
-          {props.lastMessageTime}
-        </div>
-        <div class="username">
-          Spider-man
-        </div>
-      </Result>
-    );
+  return(
+    <Result onClick={() => props.hideDialogs()}>
+      <img src={avatar} className="avatar" alt="avatat"/>
+      <div className="message">
+        {props.lastMessageText}
+      </div>
+      <div className="time">
+        {props.lastMessageTime}
+      </div>
+      <div className="username">
+        Spider-man
+      </div>
+    </Result>
+  );
 }
 
-export default DialogList
+export default DialogList;
